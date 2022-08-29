@@ -15,12 +15,20 @@ public class Main {
         switch (chose) {
             case "rectangle" -> drawable = createRectangle();
             case "square" -> drawable = createSquare();
+            case "tree" -> drawable = createTree();
             default -> System.out.println("Taki kształt nie istnieje");
         }
         if (drawable != null) {
             drawable.draw();
         }
 
+    }
+
+    private static Tree createTree() {
+        System.out.println("Podaj wysokość");
+        int h = sc.nextInt();
+        sc.nextLine();
+        return new Tree(h);
     }
 
     private static Square createSquare() {
